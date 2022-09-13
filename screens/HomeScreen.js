@@ -58,10 +58,10 @@ export default function HomeScreen({ navigation }) {
       </View>
         <View style={{display: 'flex', flexDirection: 'row'}}>
           <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('Description')}>
-            <Text className='font-bold text-white text-lg text-center p-6'>Descripción {'\n'} del problema</Text>
+            <Text className='font-bold text-white text-lg text-center p-6'>Problem {'\n'}description</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('Resolution')}>
-            <Text className='font-bold text-white text-lg text-center p-6'>Importancia de {'\n'} la resolución</Text>
+            <Text className='font-bold text-white text-lg text-center p-6'>Resolution {'\n'}importance</Text>
           </TouchableOpacity>
         </View>
         

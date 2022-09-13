@@ -24,8 +24,8 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name='Home' component={HomeScreen} options={{headerShown: false}} />
-      <HomeStack.Screen name='Description' component={DescriptionScreen} />
-      <HomeStack.Screen name='Resolution' component={ResolutionScreen} />
+      <HomeStack.Screen name='Description' component={DescriptionScreen} options={{headerShown: false}} />
+      <HomeStack.Screen name='Resolution' component={ResolutionScreen} options={{headerShown: false}} />
       <HomeStack.Screen name='Team' component={TeamScreen} options={{headerShown: false}} />
     </HomeStack.Navigator>
   )
