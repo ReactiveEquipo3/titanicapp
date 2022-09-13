@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
-export default function SelectionScreen() {
+export default function PredictionScreen() {
   return (
-    <View>
-      <Text>SelectionScreen</Text>
-    </View>
+    <SafeAreaView className='bg-gray-400'>
+      <Text className='font-bold text-gray-300 text-lg font-light text-xl text-center p-2'>Selection</Text>
+    </SafeAreaView>
   )
 }

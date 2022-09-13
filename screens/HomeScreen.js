@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView className='bg-gray-400' style={styles.container}>
-      <Text className='font-bold text-gray-300 text-lg'>HomeScreeeeeen</Text>
+      <Text className='font-bold text-gray-300 text-lg'>HomeScreen</Text>
       <TouchableOpacity onPress={() => navigation.navigate('Description')}>
         <Text>Descripción del problema</Text>
       </TouchableOpacity>
