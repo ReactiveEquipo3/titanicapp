@@ -9,7 +9,7 @@ const navigation = useNavigation()
   return (
     <>
     <SafeAreaView className='bg-gray-400'>
-      <Text className='font-bold text-gray-300 text-lg font-light text-xl text-center p-2'>Algoritmo 2</Text>
+      <Text className='font-bold text-gray-300 text-lg font-light text-xl text-center p-2'>Algorithm 2</Text>
     </SafeAreaView>
 
     <ScrollView>
