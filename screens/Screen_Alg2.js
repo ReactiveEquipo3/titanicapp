@@ -59,7 +59,10 @@ const navigation = useNavigation()
               <Text className="font-bold text-xl">Confusion matrix</Text>
               <Image
               source={ require('../assets/imgs/matrixknn.png') }
-              className="h-10 w-10"
+              style={{
+                height: 200,
+                width: 200,
+              }}
               />
             </View>
           </View>
@@ -72,7 +75,10 @@ const navigation = useNavigation()
               <Text className="font-bold text-xl">ROC and AUC</Text>
               <Image
               source={ require('../assets/imgs/auckn.png') }
-              className="h-10 w-10"
+              style={{
+                height: 200,
+                width: 200,
+              }}
               />
             </View>
           </View>
