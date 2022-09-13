@@ -21,7 +21,7 @@ const HomeStack = createNativeStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name='Home' component={HomeScreen} />
+      <HomeStack.Screen name='Home' component={HomeScreen} options={{headerShown: false}} />
       <HomeStack.Screen name='Description' component={DescriptionScreen} />
     </HomeStack.Navigator>
   )
@@ -56,11 +56,13 @@ export default function App() {
     <NavigationContainer>
       <TailwindProvider>
         <Tab.Navigator
+        initialRouteName={"Home"}
         tabBarOptions={{showLabel: false,
         }}
         {...{ screenOptions }}
         >
-            <Tab.Screen name='Home' component={HomeStackScreen}
+            
+            <Tab.Screen name='Algorithm 1' component={Screen_Alg1}
             options={{
               headerShown: false,
               tabBarIcon: ({focused}) => (
@@ -76,16 +78,100 @@ export default function App() {
                   
                   />
                   <Text
-                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 12}}
+                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 14}}
+                  >Algo 1</Text>
+                </View>
+              ),
+            
+            }} />
+            <Tab.Screen name='Algorithm 2' component={Screen_Alg2}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({focused}) => (
+                <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                  <Image
+                    source={require('./assets/icons/algoritmo.png')}
+                    resizeMode="contain"
+                    style={{
+                      width: 25,
+                      height: 25,
+                      tintColor: focused ? '#4DC6FC' : '#748c94',
+                    }}
+                  
+                  />
+                  <Text
+                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 14}}
+                  >Algo 2</Text>
+                </View>
+              ),
+            
+            }} />
+            <Tab.Screen name='Home' component={HomeStackScreen}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({focused}) => (
+                <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                  <Image
+                    source={require('./assets/icons/home.png')}
+                    resizeMode="contain"
+                    style={{
+                      width: 25,
+                      height: 25,
+                      tintColor: focused ? '#4DC6FC' : '#748c94',
+                    }}
+                  
+                  />
+                  <Text
+                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 14}}
                   >Home</Text>
                 </View>
               ),
             
             }} />
-            <Tab.Screen name='Algorithm 1' component={Screen_Alg1} options={{headerShown: false}} />
-            <Tab.Screen name='Algorithm 2' component={Screen_Alg2} options={{headerShown: false}} />
-            <Tab.Screen name='Prediction' component={PredictionScreen} options={{headerShown: false}} />
-            <Tab.Screen name='Selection' component={SelectionScreen} options={{headerShown: false}} />
+            <Tab.Screen name='Prediction' component={PredictionScreen}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({focused}) => (
+                <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                  <Image
+                    source={require('./assets/icons/prediction.png')}
+                    resizeMode="contain"
+                    style={{
+                      width: 25,
+                      height: 25,
+                      tintColor: focused ? '#4DC6FC' : '#748c94',
+                    }}
+                  
+                  />
+                  <Text
+                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 14}}
+                  >Prediction</Text>
+                </View>
+              ),
+            
+            }} />
+            <Tab.Screen name='Selection' component={SelectionScreen}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({focused}) => (
+                <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                  <Image
+                    source={require('./assets/icons/select.png')}
+                    resizeMode="contain"
+                    style={{
+                      width: 25,
+                      height: 25,
+                      tintColor: focused ? '#4DC6FC' : '#748c94',
+                    }}
+                  
+                  />
+                  <Text
+                  style={{color: focused ? '#4DC6FC' : '#748c94', fontSize: 14}}
+                  >Selection</Text>
+                </View>
+              ),
+            
+            }} />
       </Tab.Navigator>
       </TailwindProvider>
 
