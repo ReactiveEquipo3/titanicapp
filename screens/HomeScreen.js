@@ -42,6 +42,7 @@ export default function HomeScreen({ navigation }) {
   });
 
   return (
+
     <ImageBackground source={image} resizeMode='cover' style={styles.image}> 
     <SafeAreaView className='' style={styles.container}>
       <View>
