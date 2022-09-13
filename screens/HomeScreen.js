@@ -3,10 +3,7 @@ import React from 'react';
 import { useNavigation} from '@react-navigation/native';
 
 
-export default function HomeScreen() {
-
-  const navigation = useNavigation();
-
+export default function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView className='bg-gray-400'>
