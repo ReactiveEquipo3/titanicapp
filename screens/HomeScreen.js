@@ -1,4 +1,4 @@
-import { Image, View, Text, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { ScrollView, Image, View, Text, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import React from 'react';
 
 
@@ -45,6 +45,7 @@ export default function HomeScreen({ navigation }) {
 
     <ImageBackground source={image} resizeMode='cover' style={styles.image}> 
     <SafeAreaView className='' style={styles.container}>
+      
       <View>
         <View>
           <Text className='font-bold text-gray-300 text-7xl'>Titanic</Text>
@@ -57,10 +58,10 @@ export default function HomeScreen({ navigation }) {
       </View>
         <View style={{display: 'flex', flexDirection: 'row'}}>
           <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('Description')}>
-            <Text className='font-bold text-white text-lg text-center p-6'>Descripción {'\n'} del problema</Text>
+            <Text className='font-bold text-white text-lg text-center p-6'>Problem {'\n'}description</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.cuadro} onPress={() => navigation.navigate('Resolution')}>
-            <Text className='font-bold text-white text-lg text-center p-6'>Importancia de {'\n'} la resolución</Text>
+            <Text className='font-bold text-white text-lg text-center p-6'>Resolution {'\n'}importance</Text>
           </TouchableOpacity>
         </View>
         

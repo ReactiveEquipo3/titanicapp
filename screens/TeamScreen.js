@@ -1,86 +1,67 @@
-import { View, Text, ScrollView, SafeAreaView, Image } from 'react-native'
+import { TouchableOpacity, View, Text, ScrollView, SafeAreaView, Image, StyleSheet} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 
 
-export default function Screen_Alg1() {
-const navigation = useNavigation()
+
+
+export default function TeamScreen() {
+
+const navigation = useNavigation();
+
+const styles = StyleSheet.create({
+  imgs: {
+    width: 150,
+    height: 150,
+    borderRadius: 15,
+  },
+
+})
 
   return (
     <>
     <SafeAreaView className='bg-gray-400'>
+    
+      <TouchableOpacity
+      onPress={navigation.goBack}
+      className='absolute top-12 left-5 p-2 z-10'>
+        <Image  source={require('../assets/icons/arrow-back.png')}
+        style={{
+          tintColor: 'white',
+          height: 25,
+          width: 25,
+          
+        }}
+      />
+      </TouchableOpacity>
       <Text className='font-bold text-gray-300 text-lg font-light text-xl text-center p-2'>Team members</Text>
     </SafeAreaView>
-
     <ScrollView>
-        <View className='bg-blue pl-2 border-gray-200'>
-          <View> 
-            <View className='pl-2 pt-8'>
-              <Text className="font-bold text-xl">Justification</Text>
-            </View>
-            <View className='flex-column px-2'>
-            <Text>&emsp;</Text>
-              <Text className='text mb-1'>We choose this algorithm because after analyzing...</Text>
-            </View>
+        <View className='mt-7 flex flex-row flex-1 justify-evenly'>
+          <View className='self-start items-center'>
+            <Image style={styles.imgs} source={require('../assets/imgs/inigo.jpg')} />
+            <Text className="font-bold text-xl text-center">Iñigo {'\n'} Zepeda</Text>
+            <Text className='text-center mb-1'>A01023684</Text>
+          </View>
+          <View className='self-start items-center'>
+            <Image style={styles.imgs} source={require('../assets/imgs/axel.jpg')} />
+            <Text className="font-bold text-xl text-center">Axel {'\n'} González</Text>
+            <Text className='text-center mb-1'>A01652775</Text>
           </View>
         </View>
-
-        <View className='bg-blue pl-2 border-gray-200'>
-          <View> 
-            <View className='pl-2 pb-3 pt-0 '>
-              <Text>&emsp;</Text>
-              <Text className="font-bold text-xl">Precision obtained</Text>
-            </View>
-            <View className='flex-column px-2'>
-            <Text>&emsp;</Text>
-              <Text className='text mb-1'>0.8268</Text>
-            </View>
+        <View className='mt-4 flex flex-row flex-1 justify-evenly'>
+          <View className='self-start items-center'>
+            <Image style={styles.imgs} source={require('../assets/imgs/ale.jpg')} />
+            <Text className="font-bold text-xl text-center">Alejandro {'\n'} Hernández</Text>
+            <Text className='text-center mb-1'>A01658969</Text>
+          </View>
+          <View className='self-start items-center'>
+            <Image style={styles.imgs} source={require('../assets/imgs/marcia.jpg')} />
+            <Text className="font-bold text-xl text-center">Marcia {'\n'} Lechuga</Text>
+            <Text className='text-center mb-1'>A01652732</Text>
           </View>
         </View>
-
-
-        <View className='bg-blue pl-2 border-gray-200'>
-          <View> 
-            <View className='pl-2 pb-3 pt-0 '>
-              <Text>&emsp;</Text>
-              <Text className="font-bold text-xl">Score of Kaggle</Text>
-            </View>
-            <View className='flex-column px-2'>
-            <Text>&emsp;</Text>
-              <Text className='text mb-1'>0.78229</Text>
-            </View>
-          </View>
-        </View>
-        
-        <View className='bg-blue pl-2'>
-          <View> 
-            <View className='pl-2 pb-3 pt-0 '>
-              <Text>&emsp;</Text>
-              <Text className="font-bold text-xl">Confusion matrix</Text>
-              <Image
-              source={ require('../assets/imgs/matrixr.png') }
-              className="h-10 w-10"
-              />
-            </View>
-          </View>
-        </View>
-
-        <View className='bg-blue pl-2'>
-          <View> 
-            <View className='pl-2 pb-3 pt-0 '>
-              <Text>&emsp;</Text>
-              <Text className="font-bold text-xl">ROC and AUC</Text>
-              <Image
-              source={ require('../assets/imgs/aucr.png') }
-              className="h-10 w-10"
-              />
-            </View>
-          </View>
-        </View>
-
-       
-
       </ScrollView>
     </>
   )
