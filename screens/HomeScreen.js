@@ -1,4 +1,4 @@
-import { Image, View, Text, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { ScrollView, Image, View, Text, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import React from 'react';
 
 
@@ -45,6 +45,7 @@ export default function HomeScreen({ navigation }) {
 
     <ImageBackground source={image} resizeMode='cover' style={styles.image}> 
     <SafeAreaView className='' style={styles.container}>
+      
       <View>
         <View>
           <Text className='font-bold text-gray-300 text-7xl'>Titanic</Text>
