@@ -18,9 +18,6 @@ print(print(100*dataset.isnull().mean()))
 # Importamos datos de test
 test = pd.read_csv('test.csv')
 
-## Asiganmos datos de prueba
-X_test = test.drop(['PassengerId','Name','Cabin','Ticket','Fare', 'Parch', 'SibSp'], axis = 1)
-
 
 ## Visualizar datos
 print(dataset.info(),'\n')
@@ -135,7 +132,7 @@ plt.show()
 
 # CSV
 output = pd.DataFrame({'PassengerId': test.PassengerId, 'Survived': y_kaggle})
-output.to_csv('submission-titanic.csv', index=False)
+output.to_csv('submission-titanic-kNN.csv', index=False)
 
 pickle.dump(classifier, open('kNN-model.pkl', 'wb'))
 model = pickle.load(open('kNN-model.pkl', 'rb'))
