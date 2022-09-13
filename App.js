@@ -41,9 +41,9 @@ export default function App() {
           <Tab.Screen name='Selection' component={SelectionScreen} options={{headerShown: false}} />
           
         </Tab.Navigator>
-        <Stack.Navigator>
+{/*         <Stack.Navigator>
           <Stack.Screen name='Description' component={DescriptionScreen} options={{headerShown: false}} />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
       </TailwindProvider>
 
     </NavigationContainer>
