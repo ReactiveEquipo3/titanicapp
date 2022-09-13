@@ -53,6 +53,7 @@ In this challenge, we ask you to build a predictive model that answers the quest
               <Image source={require('../assets/imgs/img-2.jpg')} style={{
                 height: 200,
                 width: 250,
+                borderRadius: 15,
               }}/>
             </View>
       </ScrollView>

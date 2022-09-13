@@ -50,6 +50,7 @@ export default function ResolutionScreen() {
               <Image source={require('../assets/imgs/img-1.jpeg')} style={{
                 height: 200,
                 width: 250,
+                borderRadius: 15,
               }}/>
             </View>
       </ScrollView>
