@@ -12,6 +12,8 @@ import Screen_Alg2 from "./screens/Screen_Alg2";
 import PredictionScreen from "./screens/PredictionScreen";
 import SelectionScreen from "./screens/SelectionScreen";
 import DescriptionScreen from "./screens/DescriptionScreen";
+import ResolutionScreen from "./screens/ResolutionScreen";
+import TeamScreen from "./screens/TeamScreen";
 
 import { Provider } from 'react-redux';
 // import { store } from '.store';
@@ -23,6 +25,8 @@ function HomeStackScreen() {
     <HomeStack.Navigator>
       <HomeStack.Screen name='Home' component={HomeScreen} options={{headerShown: false}} />
       <HomeStack.Screen name='Description' component={DescriptionScreen} />
+      <HomeStack.Screen name='Resolution' component={ResolutionScreen} />
+      <HomeStack.Screen name='Team' component={TeamScreen} />
     </HomeStack.Navigator>
   )
 }
