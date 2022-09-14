@@ -60,8 +60,8 @@ const navigation = useNavigation()
               <Image
               source={ require('../assets/imgs/matrixknn.png') }
               style={{
-                height: 500,
-                width: 600,
+                height: 290,
+                width: 350,
               }}
               />
             </View>
@@ -76,8 +76,8 @@ const navigation = useNavigation()
               <Image
               source={ require('../assets/imgs/auckn.png') }
               style={{
-                height: 400,
-                width: 500,
+                height: 290,
+                width: 350,
               }}
               />
             </View>
