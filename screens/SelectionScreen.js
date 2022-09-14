@@ -30,14 +30,14 @@ const navigation = useNavigation()
 
         <View className='bg-blue pl-2'>
           <View> 
-            <View className='pl-2 pb-3 pt-0 '>
+            <View className='pl-2 pb-3'>
               <Text>&emsp;</Text>
               
               <Image
               source={ require('../assets/imgs/forest.png') }
               style={{
-                height: 400,
-                width: 500,
+                height: 290,
+                width: 320,
               }}
               />
             </View>
