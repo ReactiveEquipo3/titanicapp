@@ -20,7 +20,7 @@ const navigation = useNavigation()
             </View>
             <View className='flex-column px-2'>
             <Text>&emsp;</Text>
-              <Text className='text mb-1'>Como segundo algoritmo, se decidió usar k vecinos más cercanos, también conocido como kNN, ya que es un clasificador de aprendizaje supervisado no paramétrico, que utiliza la proximidad para hacer clasificaciones y/o predicciones sobre la agrupación de un punto de datos individual. Este método nos permite nos permite aproximar, es decir, mediante etiquetas se hace un voto mayoritario, en otra palabras, se utiliza la etiqueta que se representa con más frecuencia alrededor de un punto de datos.</Text>
+              <Text className='text mb-1'>Como segundo algoritmo, se decidió usar k vecinos más cercanos, también conocido como kNN, ya que es un clasificador de aprendizaje supervisado no paramétrico, que utiliza la proximidad para hacer clasificaciones y/o predicciones sobre la agrupación de un punto de datos individual. Este método nos permite nos permite aproximar, es decir, mediante etiquetas se hace un voto mayoritario, en otra palabras, se utiliza la etiqueta que se representa con más frecuencia alrededor de un punto de datos. </Text>
             </View>
           </View>
         </View>

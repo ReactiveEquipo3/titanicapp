@@ -21,7 +21,7 @@ const navigation = useNavigation()
             </View>
             <View className='flex-column px-2'>
             <Text>&emsp;</Text>
-              <Text className='text mb-1'>Como segundo algoritmo, se decidió usar Random Forest. Este método consiste en crear muchos árboles para luego usarlos en la predicción de la variable de interés. Se decidió usar Random Forest ya que nos da la posibilidad de tener Y predicciones,  una por cada B árbol, basados en nuestras X como Age, Sex, P-class y Embarked. Una vez teniendo las Y predicciones, se puede unificar por mayoría de votos , es decir, mayor incidencia. /Text>
+              <Text className='text mb-1'>Como segundo algoritmo, se decidió usar Random Forest. Este método consiste en crear muchos árboles para luego usarlos en la predicción de la variable de interés. Se decidió usar Random Forest ya que nos da la posibilidad de tener Y predicciones,  una por cada B árbol, basados en nuestras X como Age, Sex, P-class y Embarked. Una vez teniendo las Y predicciones, se puede unificar por mayoría de votos , es decir, mayor incidencia. </Text>
             </View>
           </View>
         </View>
