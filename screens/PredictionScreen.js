@@ -1,15 +1,39 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, TouchableWithoutFeedback, Keyboard, ActivityIndicator, StyleSheet } from 'react-native'
-import { TextInput, Button, Provider } from 'react-native-paper'
+import { TextInput, Button, Provider, DefaultTheme } from 'react-native-paper'
 import DropDown from "react-native-paper-dropdown"
 import { Formik } from 'formik'
 import axios from 'axios'
 
 export default function PredictionScreen() {
 
+  const theme = {
+    ...DefaultTheme,
+    roundness: 2,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#4DC6FC',
+      accent: '#f1c40f',
+    },
+  };
+
   const [prediction, setPrediction] = useState('');
 
   const [loading, setLoading] = useState(false);
+
+  const [showAlgorithmDropDown, setShowAlgorithmDropDown] = useState(false);
+  const [algorithm, setAlgorithm] = useState('');
+
+  const algorithmList = [
+    {
+      label: 'K-Nearest Neighbor',
+      value: 'kNN',
+    },
+    {
+      label: 'Random Forest',
+      value: 'RandomForest',
+    }
+  ]
 
   const [showPclassDropDown, setShowPclassDropDown] = useState(false);
   const [pclass, setPclass] = useState('');
@@ -61,7 +85,7 @@ export default function PredictionScreen() {
       }
     ];
   return (
-    <Provider>
+    <Provider theme={theme}>
       <SafeAreaView className='bg-gray-400'>
         <Text className='font-bold text-gray-300 text-lg font-light text-xl text-center p-2'>Prediction</Text>
       </SafeAreaView>
@@ -70,7 +94,7 @@ export default function PredictionScreen() {
         initialValues = {{age: ''}}
         onSubmit = { values => {
           setLoading(true);
-          axios.post('http://192.168.31.242:5000/kNN',{
+          axios.post(`http://192.168.31.242:5000/${algorithm}`,{
             Pclass: parseInt(pclass),
             Sex: parseInt(gender),
             Age: parseInt(values.age),
@@ -82,6 +106,18 @@ export default function PredictionScreen() {
           {({handleChange, handleBlur, handleSubmit, values}) => (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
               <View className='px-5 pt-5'>
+                <View className='mb-2'>
+                  <DropDown
+                  label={"Algorithm"}
+                  mode={"outlined"}
+                  visible={showAlgorithmDropDown}
+                  showDropDown={() => setShowAlgorithmDropDown(true)}
+                  onDismiss={() => setShowAlgorithmDropDown(false)}
+                  value={algorithm}
+                  setValue={setAlgorithm}
+                  list={algorithmList}
+                  />
+                </View>
                 <View className='mb-2'>
                   <DropDown
                   label={"Passenger Class"}
@@ -102,6 +138,7 @@ export default function PredictionScreen() {
                   value={values.age}
                   keyboardType='numeric'
                   mode='outlined'
+                  style={{ color: 'white' }}
                   />
                 </View>
                 <View className='mb-2'>
@@ -128,16 +165,19 @@ export default function PredictionScreen() {
                   list={portList}
                   />
                 </View>
-                  <Button onPress={() => {handleSubmit(); Keyboard.dismiss(); }} mode="contained" title='Submit'>
-                      Submit
-                  </Button>
+                <Button onPress={() => {handleSubmit(); Keyboard.dismiss(); }} mode="contained" title='Submit' dark={true}>
+                    Submit
+                </Button>
                   {
                     prediction !== '' && (
-                      <Text style={{fontSize: 25, color: 'black'}}>{prediction[0] === 0 ? 'Murió' : 'Sobrevivió'}</Text>
+                      <View className='mt-6 content-center flex flex-col items-center'>
+                        <Text style={{fontSize: 22}} className='font-bold'>Prediction</Text>
+                        <Text style={{fontSize: 20}}>The passenger {prediction[0] === 0 ? 'survived' : 'died'}</Text>
+                      </View>
                     )
                   }
               </View>
-          </TouchableWithoutFeedback>
+            </TouchableWithoutFeedback>
           )}
         </Formik>
         {loading &&
