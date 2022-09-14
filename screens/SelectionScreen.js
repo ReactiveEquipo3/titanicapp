@@ -37,7 +37,7 @@ const navigation = useNavigation()
               source={ require('../assets/imgs/forest.png') }
               style={{
                 height: 290,
-                width: 320,
+                width: 360,
               }}
               />
             </View>
